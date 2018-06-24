@@ -472,9 +472,7 @@ $graph:
         Only valid when `type: File` or is an array of `items: File`.
 
         Provides a pattern or expression specifying files or directories that
-        must be included alongside the primary file.  All listed secondary
-        files must be present.  An implementation may fail workflow execution
-        if an expected secondary file does not exist.
+        must be included alongside the primary file.
 
         If the value is an expression, the value of `self` in the expression
         must be the primary input or output File object to which this binding
@@ -895,5 +893,6 @@ $graph:
     - name: required
       type: boolean?
       doc: |
-        An implementation must fail workflow execution if `required` is set
-        to `true` and the expected secondary file does not exist.
+        Implementation should not fail workflow execution if `required` is set
+        to `false` and the expected secondary file does not exist. Default
+        value is `true`.

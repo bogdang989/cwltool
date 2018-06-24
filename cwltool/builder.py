@@ -292,7 +292,7 @@ class Builder(HasReqsHints):
                             if 'required' in sf:
                                 sf_required = sf['required']
                             else:
-                                sf_required = False
+                                sf_required = True
                             sf = sf['pattern']
                         if isinstance(sf, dict) or "$(" in sf or "${" in sf:
                             sfpath = self.do_eval(sf, context=datum)
